@@ -1,7 +1,7 @@
 const Discord = require("discord.js"), https = require("https"); // request 모듈은 개발이 중지되었으므로 가벼운(?) https 모듈을 사용한다.
 let dmdata; // 보낸 재난문자의 발송시간
 function webhooksend(title, info, time) {
-    new Discord.WebhookClient("739742527648825398","gEUzUCvg5pV6UTrizNqWSvSuaadzLTp4TTqRbDL2anB7c3HnoeyLbOmG5q7AcHck29wG")
+    new Discord.WebhookClient("웹훅 토큰")
         .send({ "embeds": [{ "title": title, "color": 16711680, "description": info, "footer": { "text": "국민재난안전포털 | " + time, "icon_url": "https://raw.githubusercontent.com/leedongho0606/cp/master/img/logo_gov.png" }, }] });
     console.log("전송됨: " + title + "\n" + info);
 }
@@ -24,4 +24,4 @@ setInterval(() => {
         }// else if (!dmdata) // 이전에 보낸 재난문자라면
         dmdata = time; // 이전에 보낸 재난문자의 발송시간을 변수에 대입
     })
-},1000); // 1초마다 파싱한
+},1000); // 1초마다 파싱
