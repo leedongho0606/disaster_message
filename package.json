@@ -1,0 +1,12 @@
+{
+  "name": "disaster_message_bot",
+  "version": "1.0.0",
+  "description": "disaster message discord webhook bot",
+  "main": "index.js",
+  "author": "LDH0606#7291",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "https": "^1.0.0"
+  }
+}
