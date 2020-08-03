@@ -1,7 +1,7 @@
-const Discord = require("discord.js"), https = require("https"); // request 모듈은 개발이 중지되었으므로 가벼운(?) https 모듈을 사용한다.
+const Discord = require("discord.js"), https = require("https"); // request 모듈은 개발이 중지되었으므로 가벼운(?) https 모듈을 사용
 let dmdata; // 보낸 재난문자의 발송시간
 function webhooksend(title, info, time) {
-    new Discord.WebhookClient("웹훅 토큰")
+    new Discord.WebhookClient("WEBHOOK ID","WEBHOOK TOKEN")
         .send({ "embeds": [{ "title": title, "color": 16711680, "description": info, "footer": { "text": "국민재난안전포털 | " + time, "icon_url": "https://raw.githubusercontent.com/leedongho0606/cp/master/img/logo_gov.png" }, }] });
     console.log("전송됨: " + title + "\n" + info);
 }
@@ -13,7 +13,7 @@ function getdisaster_message(callback) { // https: 443, http: 80
         });
         res.on("end", () => { // 서버와의 연결이 종료되면
             data = JSON.parse(data)[0]; // 최상위 재난문자
-            callback((data.SJ).substr(20), data.CONT, (data.SJ).substring(0, 19)); // 데이터 처리 다되면 콜백
+            callback((data.SJ).substr(20), (data.CONT).replace(/&nbsp;/g, " ").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g,"&").replace(/&quot;/g,'"').replace(/&#035;/g, "#").replace(/&#039;/g, "'"), (data.SJ).substring(0, 19)); // 데이터 처리 다되면 콜백
         });
     }).end(); // 서버 연결을 종료.
 }
