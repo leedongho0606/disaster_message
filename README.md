@@ -1,7 +1,11 @@
 # disaster_message
-재난문자 디스코드 웹훅봇
-모듈 설치는 pakege.json 파일이 있는 상태에서
-npm i 또는 npm install만 치시면 자동으로 필요한 모든 모듈이 설치됩니다 :)
+재난문자 디스코드 웹훅봇<br><br>
+
+
+
+모듈 설치는 pakege.json 파일이 있는 상태에서<br>
+npm i 또는 npm install만 치시면 자동으로 필요한 모든 모듈이 설치됩니다 :)<br><br>
+
 
 출처: https://www.safekorea.go.kr/idsiSFK/neo/main_m/dis/disasterDataList.html
 
