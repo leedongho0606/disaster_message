@@ -1,6 +1,6 @@
 {
   "name": "disaster_message_bot",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "disaster message discord webhook bot",
   "main": "index.js",
   "author": "LDH0606#7291",
