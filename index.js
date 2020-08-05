@@ -1,9 +1,13 @@
 const Discord = require("discord.js"), https = require("https"), html_entities = new (require('html-entities').AllHtmlEntities)();// request 모듈은 개발이 중지되었으므로 가벼운(?) https 모듈을 사용
 let dmdata; // 보낸 재난문자의 발송시간
 function webhooksend(title, info, time) {
-    new Discord.WebhookClient("webhook id", "webhook token") // 아래코드에서는 html entity를 decode한다(부하줄이기 위함)
-        .send({ "embeds": [{ "title": title, "color": 16711680, "description": html_entities.decode(info), "footer": { "text": "국민재난안전포털 | " + time, "icon_url": "https://raw.githubusercontent.com/leedongho0606/cp/master/img/logo_gov.png" }, }] });
-    console.log("웹훅 전송됨: " + title + "\n" + info);
+    try { // 웹훅 전송에 성공하면
+        new Discord.WebhookClient("webhook id", "webhook token") // 아래코드에서는 html entity를 decode한다(부하줄이기 위함)
+            .send({ "embeds": [{ "title": title, "color": 16711680, "description": html_entities.decode(info), "footer": { "text": "국민재난안전포털 | " + time, "icon_url": "https://raw.githubusercontent.com/leedongho0606/cp/master/img/logo_gov.png" }, }] });
+        console.log("웹훅 전송 성공: " + title + "\n" + info);
+    } catch (e) { // 웹훅 전송에 실패하면
+        console.error("웹훅 전송 실패:\n", e);
+    }
 }
 function getdisaster_message(callback) { // https: 443, http: 80
     let data = ""; // 받은 데이터 임시 저장용 변수
