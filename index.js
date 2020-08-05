@@ -5,7 +5,12 @@ function webhooksend(title, info, time) {
         /* https://discordapp.com/api/webhooks/740589415491174461/1zxts-jfHrVnQQzOJbWzAaSSSGPuh8RTRF9AFSmpDlasKOcqiGlWEx9Vjpu66igYwTXb
                                               |    webhook id    |                            webhook token                           |*/
         new Discord.WebhookClient("webhook id", "webhook token") // 아래코드에서는 html entity를 decode한다(부하줄이기 위함)
-            .send({ "embeds": [{ "title": title, "color": 16711680, "description": html_entities.decode(info), "footer": { "text": "국민재난안전포털 | " + time, "icon_url": "https://raw.githubusercontent.com/leedongho0606/cp/master/img/logo_gov.png" }, }] });
+            .send({ "embeds": [{ "title": title, "color": 16711680, "description": html_entities.decode(info), "footer": { "text": "국민재난안전포털 | " + time, "icon_url": "https://raw.githubusercontent.com/leedongho0606/cp/master/img/logo_gov.png" }, }] })
+            .catch(e => { // 오류가 감지되었다면
+                if (String(e).match("Unknown Webhook")) console.log("웹훅 전송 실패: 올바르지 않은 웹훅!");
+                else console.log("웹훅 전송 실패:\n" + e);
+                return;
+            });
         console.log("웹훅 전송 성공: " + title + "\n" + info);
     } catch (e) { // 웹훅 전송에 실패하면
         console.error("웹훅 전송 실패:\n", e);
