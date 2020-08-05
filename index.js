@@ -2,6 +2,8 @@ const Discord = require("discord.js"), https = require("https"), html_entities =
 let dmdata; // 보낸 재난문자의 발송시간
 function webhooksend(title, info, time) {
     try { // 웹훅 전송에 성공하면
+        /* https://discordapp.com/api/webhooks/740589415491174461/1zxts-jfHrVnQQzOJbWzAaSSSGPuh8RTRF9AFSmpDlasKOcqiGlWEx9Vjpu66igYwTXb
+                                              |webhook id        |webhook token                                                       |*/
         new Discord.WebhookClient("webhook id", "webhook token") // 아래코드에서는 html entity를 decode한다(부하줄이기 위함)
             .send({ "embeds": [{ "title": title, "color": 16711680, "description": html_entities.decode(info), "footer": { "text": "국민재난안전포털 | " + time, "icon_url": "https://raw.githubusercontent.com/leedongho0606/cp/master/img/logo_gov.png" }, }] });
         console.log("웹훅 전송 성공: " + title + "\n" + info);
