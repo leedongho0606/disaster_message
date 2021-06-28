@@ -1,16 +1,12 @@
-# disaster_message
-재난문자 디스코드 웹훅봇<br><br>
+# 재난문자봇
 
+**지원 SNS**<br>
+- 트위터 **(https://twitter.com/k_disastermsg)**
+- 디스코드 **(Webhook)**
 
+**출처**<br>
+- 국민재난안전포털 **(https://www.safekorea.go.kr/idsiSFK/neo/main_m/dis/disasterDataList.html)**
+- ~~[공공데이터포털] 행정안전부 재난문자방송 발령현황 **(https://data.go.kr/data/3058822/openapi.do)**~~
 
-모듈 설치는 pakege.json 파일이 있는 상태에서<br>
-npm i 또는 npm install만 치시면 자동으로 필요한 모든 모듈이 설치됩니다 :)<br><br>
-
-
-출처: https://www.safekorea.go.kr/idsiSFK/neo/main_m/dis/disasterDataList.html
-
-해당 스크립트의 저작권은 LDH0606에게 있음을 밝힙니다.
-
-이 스크립트는 크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 4.0 국제 라이선스에 따라 이용 할 수 있습니다.
-<br>
-![](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)
+**참고**<br>
+- node-twitter **(https://github.com/desmondmorris/node-twitter/tree/master/examples)**
