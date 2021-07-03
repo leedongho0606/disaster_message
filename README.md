@@ -11,6 +11,7 @@
 
 **참고**<br>
 - node-twitter **(https://github.com/desmondmorris/node-twitter/tree/master/examples)**
+- twitter api **(https://developer.twitter.com/en/docs/twitter-api/v1)**
 - telegraf **(https://github.com/telegraf/telegraf)**
 - https://core.telegram.org/bots/api
 - https://core.telegram.org/bots/samples
