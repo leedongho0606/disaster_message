@@ -20,7 +20,10 @@
     },
     "telegram": {
         "token": "1234567890:abcdefg",
-        "chatid": "-1234567890"
+        "chatid": "-1234567890",
+        "sendoption": {
+            "disable_notification": true
+        }
     },
     "safekorea": {
         "checkdelay": 1,
