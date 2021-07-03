@@ -53,12 +53,12 @@ function reqProcesse(obj, req, reject) {
     if (obj.method === "POST" && obj.send) {
         req.write(obj.send);
     }
-    req.on("error", (e) => {
+    req.on("error", e => {
         console.log("[HTTP] Request Error:", e);
         reject(e);
     });
-    req.on("timeout", (t) => {
-        console.log("[HTTP] Request timeout:", t);
+    req.on("timeout", () => {
+        console.log("[HTTP] Request timeout");
         reject(t);
     });
     req.end();

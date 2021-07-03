@@ -1,6 +1,6 @@
 {
   "name": "disaster_message_bot",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Korea disaster message bot",
   "main": "index.js",
   "author": "LDH0606#0606",
@@ -9,6 +9,7 @@
     "discord.js": "^12.5.3",
     "fs": "0.0.1-security",
     "html-entities": "^1.4.0",
+    "telegraf": "^4.4.0",
     "twitter": "^1.7.1"
   }
 }

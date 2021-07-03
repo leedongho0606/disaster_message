@@ -11,6 +11,8 @@ class TwitterWoker extends Events.EventEmitter {
         this.Twitter = new TwitterPackage({ ...keys });
     }
 
+    log = Log;
+
     _CutMessage(str) {
         if (str.length > 140) {
             str = str.substring(0, 140);
@@ -37,7 +39,6 @@ class TwitterWoker extends Events.EventEmitter {
                     return reject(error);
                 }
                 resolve(tweet, response);
-                // Log(status);
             });
         });
     }
@@ -47,34 +48,30 @@ class TwitterWoker extends Events.EventEmitter {
             const fs = require("fs");
             this.Twitter.post("media/upload", { media: fs.readFileSync(path) }, function (error, media) { // param: res
                 if (error) {
-                    reject(error);
-                    return Log("MediaPost 실패", error);
+                    return reject(error);
                 }
-                // NOTE: 필요시 media 자체를 넘기면됨
                 resolve(media.media_id_string);
             });
         });
     }
     // https://github.com/tweepy/tweepy/issues/1267#issuecomment-530619285
-    ReplyTweet(status_id, msg) { 
+    ReplyTweet(status_id, msg) {
         return new Promise((resolve, reject) => {
             msg = this._CutMessage(msg);
             this.Twitter.post("statuses/update", { in_reply_to_status_id: status_id, status: msg }, function (error, tweet, response) {
                 if (error) {
-                    reject(error);
-                    return Log("TweetReply 실패", error);
+                    return reject(error);
                 }
                 resolve(tweet, response);
             });
         });
     }
-    
+
     FavoriteTweet(status_id) {
         return new Promise((resolve, reject) => {
             this.Twitter.post("favorites/create.json", { id: status_id }, function (error, tweet, response) {
                 if (error) {
-                    reject(error);
-                    return Log("TweetFavorite 실패", error);
+                    return reject(error);
                 }
                 resolve(tweet, response);
             });

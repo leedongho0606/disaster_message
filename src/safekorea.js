@@ -21,15 +21,11 @@ class SAFEKOREA extends Events.EventEmitter {
         if (this.interval) {
             Log(this.config.checkdelay, "초 주기로 국민재난안전포털에서 전국재난문자 수집중...");
         }
-        
-        // TEST
-        // setTimeout(() => {
-        //     this.data.LastMsg -= 5;
-        // }, 2100);
     }
 
     Start() {
         const f = () => {
+            if (!this.work) return;
             this._DataCheck();
         };
         this.interval = setInterval(f, this.config.checkdelay * 1000);
