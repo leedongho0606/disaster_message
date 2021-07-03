@@ -4,9 +4,9 @@
             "https://discord.com/api/webhooks/123456789/abcdefg"
         ],
         "embed": {
-            "color": "3F51B5",
+            "color": "1DA1F2",
             "author": {
-                "name": "국민재난안전포털",
+                "name": "재난문자",
                 "iconurl": "https://www.weather.go.kr/pews/img/logo_gov.gif",
                 "url": "https://m.safekorea.go.kr/idsiSFK/neo/main_m/dis/disasterDataList.html"
             }
@@ -19,7 +19,9 @@
         "access_token_secret": "1ab2c3d4e5f6g7"
     },
     "safekorea": {
-        "checkdelay": 2,
-        "reqtimeout": 2
+        "checkdelay": 1,
+        "reqtimeout": 1,
+        "reqmsgcnt": 20,
+        "nodataretry": 3
     }
 }

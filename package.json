@@ -1,6 +1,6 @@
 {
   "name": "disaster_message_bot",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "Korea disaster message bot",
   "main": "index.js",
   "author": "LDH0606#0606",
