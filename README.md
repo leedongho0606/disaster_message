@@ -10,3 +10,5 @@
 
 **참고**<br>
 - node-twitter **(https://github.com/desmondmorris/node-twitter/tree/master/examples)**
+<br>
+https://trello.com/b/dLiDYu3n/%EC%A0%84%EA%B5%AD-%EC%9E%AC%EB%82%9C%EB%AC%B8%EC%9E%90-%EB%B4%87
