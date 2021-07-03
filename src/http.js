@@ -59,7 +59,7 @@ function reqProcesse(obj, req, reject) {
     });
     req.on("timeout", () => {
         console.log("[HTTP] Request timeout");
-        reject(t);
+        reject();
     });
     req.end();
 }

@@ -7,7 +7,7 @@
             "color": "1DA1F2",
             "author": {
                 "name": "재난문자",
-                "iconurl": "https://www.weather.go.kr/pews/img/logo_gov.gif",
+                "iconurl": "https://raw.githubusercontent.com/leedongho0606/disaster_message/master/res/ic_launcher_cell_broadcast.png",
                 "url": "https://m.safekorea.go.kr/idsiSFK/neo/main_m/dis/disasterDataList.html"
             }
         }
